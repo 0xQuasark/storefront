@@ -1,36 +1,25 @@
-import React, { useEffect } from 'react';
+'use strict';
 import { useSelector, useDispatch } from 'react-redux';
-import { setProducts } from '../../store/products';
+
+import React from 'react';
 
 function Products() {
-  const dispatch = useDispatch();
-  const products = useSelector((state) => state.products);
-  const activeCategory = useSelector((state) => state.activeCategory);
+const state = useSelector(state => state.products);  
 
-  useEffect(() => {
-    // Fetch products from API and dispatch setProducts action
-    // This is just a placeholder, replace with your actual API call
-    const fetchedProducts = [
-      { name: 'iPhone', category: 'Electronics' },
-      { name: 'Harry Potter', category: 'Books' },
-      { name: 'T-shirt', category: 'Clothing' },
-    ];
-    dispatch(setProducts(fetchedProducts));
-  }, [dispatch]);
-  
-  console.log('products', products);
-
-  const filteredProducts = products.filter(
-    (product) => product.category === activeCategory
-  );
-
-  return (
-    <div>
-      {filteredProducts.map((product) => (
-        <div key={product.name}>{product.name}</div>
-      ))}
-    </div>
-  );
+    return (
+        <div className="products">
+            <h2>Products</h2>
+            <ul>
+                {state.products.map((product, idx) => (
+                    <div key={idx}>
+                        <h3>{product.name}</h3>
+                        <p>{product.description}</p>
+                        <p>Price: ${product.price}</p>
+                        <p>Inventory: {product.inventory}</p>
+                    </div>
+                ))}
+            </ul>
+        </div>
+    );
 }
-
 export default Products;
