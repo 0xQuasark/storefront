@@ -1,20 +1,23 @@
 import React from 'react';
-import { Provider } from 'react-redux';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import Categories from './components/Categories/Categories';
+import {Provider} from 'react-redux';
+import Products from './components/Products/Products';
 import store from './store';
-import Header from './Components/Header/Header';
-import Footer from './Components/Footer/Footer';
-import Categories from './Components/Categories/Categories';
-import Products from './Components/Products/Products';
+import './App.css'
 
 function App() {
+  const storeName = 'Clothing Store';
   return (
-    <Provider store={store}>
-      <Header />
+  
+    <Provider store ={store}>
+      <Header storeName={storeName}/>
       <Categories />
       <Products />
       <Footer />
     </Provider>
-  );
+  )
 }
 
-export default App;
+export default App

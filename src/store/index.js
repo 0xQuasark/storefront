@@ -1,14 +1,10 @@
-import { createStore, combineReducers } from 'redux';
-import categoriesReducer from './categories';
-import productsReducer from './products';
-import activeCategoryReducer from './active-category';
+import {createStore, combineReducers} from 'redux';
+ import productReducer from './products';
+ import categoryReducer from './categories';
 
-const rootReducer = combineReducers({
-  categories: categoriesReducer,
-  products: productsReducer,
-  activeCategory: activeCategoryReducer,
+ const reducer = combineReducers({
+  products: productReducer,
+  categories: categoryReducer
 });
 
-const store = createStore(rootReducer);
-
-export default store;
+ export default createStore(reducer);

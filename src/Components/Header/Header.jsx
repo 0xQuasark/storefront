@@ -1,7 +1,11 @@
 import React from 'react';
 
-function Header() {
-  return <h1>My Virtual Store</h1>;
+function Header({ storeName }) {
+  return (
+    <div className="header">
+      <h1>{storeName}</h1>
+    </div>
+  );
 }
 
 export default Header;
