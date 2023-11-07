@@ -1,18 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import { Provider } from 'react-redux';
+import store from './store';
+import Header from './Components/Header/Header';
+import Footer from './Components/Footer/Footer';
+import Categories from './Components/Categories/Categories';
+import Products from './Components/Products/Products';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-    <header className="App-header">
-      <h1>This is a new app</h1>
-    </header>
-    </>
-  )
+    <Provider store={store}>
+      <Header />
+      <Categories />
+      <Products />
+      <Footer />
+    </Provider>
+  );
 }
 
-export default App
+export default App;
