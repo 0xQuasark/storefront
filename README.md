@@ -17,3 +17,4 @@ This phase involves setting up a basic React application with the following feat
 
 - Redux for state management: This allows us to manage the state of the application in memory, providing a single source of truth for the entire application.
 - Material UI for components and styling: This provides a set of ready-to-use components that follow the Material Design guidelines, allowing us to create a consistent and attractive user interface with minimal effort.
+- I used the review from today to build out the app; original code by Samaad and Jacob

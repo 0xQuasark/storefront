@@ -8,7 +8,7 @@ import store from './store';
 import './App.css'
 
 function App() {
-  const storeName = 'Clothing Store';
+  const storeName = 'A Clothing Store';
   return (
   
     <Provider store ={store}>

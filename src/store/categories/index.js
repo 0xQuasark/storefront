@@ -24,10 +24,12 @@ const initialState = {
   },
 }
 
+// Reducer
 const reducer = (state = initialState, action) => {
   const { type, payload } = action;
+  // console.log('Heres our CATEGORY payload:', action);
   switch (type) {
-    case 'CATEGORY_SELECTED':
+    case 'CHANGE_ACTIVE_CATEGORY':
       return {
         ...state,
         activeCategory: payload
@@ -37,6 +39,8 @@ const reducer = (state = initialState, action) => {
   }  
 }
 
+// Action creator
+// A payload just needs to be passed into the action creator, and that'll take care of talking to the reducer.
 export const selectCategory = (category) => {
   return {
     type: 'CATEGORY_SELECTED',

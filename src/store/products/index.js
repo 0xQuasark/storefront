@@ -1,7 +1,6 @@
 'use strict';
 
 const initialState = {
-  displayList: [],
   list: [
     {
       category: 'SHIRTS',
@@ -26,11 +25,13 @@ const initialState = {
     }
   ],
 }
+initialState.displayList = initialState.list; // added to it loads all the products on page load
 
 const reducer = (state = initialState, action) => {
+  // console.log('Heres our PRODUCTS payload:', action);
   const { type, payload } = action;
   switch (type) {
-    case 'CATEGORY_SELECTED':
+    case 'CHANGE_ACTIVE_CATEGORY':
       return {
         ...state,
         displayList: filterProducts(state, payload),
@@ -41,6 +42,7 @@ const reducer = (state = initialState, action) => {
 }
 
 function filterProducts(state, payload) {
+  // console.log('Filtering products by state:', state, 'and payload', payload);
   if (payload.name === 'ALL') {
     return state.list;
   }
