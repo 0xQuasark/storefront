@@ -11,35 +11,37 @@ function Categories() {
       payload: category,
     }
     dispatch(action);
-    console.log({action});
+    console.log('Action!', {action});
 
   }
-    const categories = [ 
-      {
-        name: 'ALL',
-        displayName: 'All',
-      },
-      {
-      name: 'SHIRTS', 
-      displayName: 'Shirts', 
-      description: 'Cool Shirts!'
-    }, {
-      name: 'PANTS', 
-      displayName: 'Pants', 
-      description: 'Cool Pants!'
-    }, {
-      name: 'SHOES', 
-      displayName: 'Shoes', 
-      description: 'Cool Shoes!'
-    }];
 
+  const categories = [ 
+    {
+      name: 'ALL',
+      displayName: 'All',
+    },
+    {
+    name: 'SHIRTS', 
+    displayName: 'Shirts', 
+    description: 'Cool Shirts!'
+  }, {
+    name: 'PANTS', 
+    displayName: 'Pants', 
+    description: 'Cool Pants!'
+  }, {
+    name: 'SHOES', 
+    displayName: 'Shoes', 
+    description: 'Cool Shoes!'
+  }];
 
   return (
     <div className="categories">
       <h2>Browse Categories</h2>
       <Stack direction="row" spacing={2}>
       {categories.map((category, idx) => (
-        <Button key={idx} variant="text" onClick={() => handleClick(category.name)}> {category.displayName}</Button>
+        <Button key={idx} variant="text" onClick={() => handleClick(category)}> 
+         {category.displayName}
+        </Button>
       ))}
       </Stack>
     </div>
